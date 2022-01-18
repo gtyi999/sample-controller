@@ -113,7 +113,7 @@ In practice, this Spec is arbitrary key-value data that specifies the configurat
 
 For example, if you were implementing a custom resource for a Database, you might provide a DatabaseSpec like the following:
 
-``` go
+```go
 type DatabaseSpec struct {
 	Databases []string `json:"databases"`
 	Users     []User   `json:"users"`
@@ -154,11 +154,13 @@ kubectl create -f artifacts/examples/crd-status-subresource.yaml
 ```
 
 ## A Note on the API version
+
 The [group](https://kubernetes.io/docs/reference/using-api/#api-groups) version of the custom resource in `crd.yaml` is `v1alpha`, this can be evolved to a stable API version, `v1`, using [CRD Versioning](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definition-versioning/).
 
 ## Cleanup
 
 You can clean up the created CustomResourceDefinition with:
+
 ```sh
 kubectl delete crd foos.samplecontroller.k8s.io
 ```
@@ -173,5 +175,4 @@ k8s.io/client-go.
 `sample-controller` is synced from
 https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/sample-controller.
 Code changes are made in that location, merged into k8s.io/kubernetes and
-later synced here.
-
+later synced here.111111
